@@ -20,6 +20,15 @@ class TodoList extends Component {
     this.setState({ todoList });
   };
 
+  handleAddition = event => {
+    event.preventDefault();
+    let id = this.state.todoList.length + 1;
+    let value = this.refs.newTodo.value;
+    const todoList = this.state.todoList.concat({ id, value });
+    this.setState({ todoList });
+    this.refs.newTodo.value = "";
+  };
+
   render() {
     let filteredTodos = this.state.todoList.filter(
       todo =>
@@ -29,6 +38,7 @@ class TodoList extends Component {
     return (
       <div>
         <input
+          className="searchBox"
           type="text"
           placeholder="Search.."
           value={this.state.search}
@@ -39,6 +49,14 @@ class TodoList extends Component {
             <TodoItem key={todo.id} todo={todo} onDelete={this.handleDelete} />
           ))}
         </ol>
+        <form onSubmit={this.handleAddition}>
+          <input
+            className="addForm"
+            type="text"
+            placeholder="+ Add item"
+            ref="newTodo"
+          />
+        </form>
       </div>
     );
   }

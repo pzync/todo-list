@@ -6,7 +6,7 @@ li {
   color: #424854;
   font-weight: 300;
   position: relative;
-  height: 48px;
+  height: 54px;
 }
 
 .todo-item-text {
@@ -22,7 +22,7 @@ li:hover button {
   opacity: 1;
 }
 
-button {
+button.delete-button {
   position: absolute;
   top: 10px;
   opacity: 0;

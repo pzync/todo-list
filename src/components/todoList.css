@@ -1,11 +1,19 @@
+ol {
+  margin-bottom: 10px;
+}
+
 input[type="text"] {
   border: none;
+  width: 100%;
+  background: #8c919b10;
   padding: 12px;
   color: rgb(28, 169, 250);
   outline: none;
   font-size: 30px;
   letter-spacing: 0.6px;
   font-weight: 300;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 ::placeholder {
@@ -13,4 +21,14 @@ input[type="text"] {
   letter-spacing: 0.6px;
   color: #42485440;
   font-weight: 300;
+}
+
+input.addForm[type="text"] {
+  background: none;
+  width: 60%;
+}
+
+input.addForm[type="text"]::placeholder {
+  background: none;
+  color: rgb(28, 169, 250);
 }
