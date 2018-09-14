@@ -7,7 +7,8 @@ class TodoList extends Component {
     search: "",
     todoList: [
       { id: 1, value: "First item on my list" },
-      { id: 2, value: "I second this" }
+      { id: 2, value: "I second this" },
+      { id: 3, value: "Three's a crowd!" }
     ]
   };
 
