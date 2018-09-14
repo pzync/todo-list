@@ -32,3 +32,25 @@ input.addForm[type="text"]::placeholder {
   background: none;
   color: rgb(28, 169, 250);
 }
+
+.todoAnim-enter {
+  opacity: 0;
+  transform: translateX(8px);
+}
+
+.todoAnim-enter.todoAnim-enter-active {
+  opacity: 1;
+  transform: translateX(0px);
+  transition: all 500ms ease-out;
+}
+
+.todoAnim-exit {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.todoAnim-exit.todoAnim-exit-active {
+  opacity: 0;
+  transform: translateX(8px);
+  transition: all 500ms ease-out;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import TodoItem from "./todoItem";
 import "./todoList.css";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 class TodoList extends Component {
   state = {
@@ -46,9 +47,17 @@ class TodoList extends Component {
           onChange={this.handleChange}
         />
         <ol>
-          {filteredTodos.map(todo => (
-            <TodoItem key={todo.id} todo={todo} onDelete={this.handleDelete} />
-          ))}
+          <TransitionGroup>
+            {filteredTodos.map(todo => (
+              <CSSTransition key={todo.id} timeout={500} classNames="todoAnim">
+                <TodoItem
+                  key={todo.id}
+                  todo={todo}
+                  onDelete={this.handleDelete}
+                />
+              </CSSTransition>
+            ))}
+          </TransitionGroup>
         </ol>
         <form onSubmit={this.handleAddition}>
           <input
